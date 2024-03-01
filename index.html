@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Web app for creating a table of selected stocks">
+    	<meta name="keywords" content="stocks, investment, word processing">
+
+		<title>Stock tabled</title>
+		<!-- viewport-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- external fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+		<!-- external CSS styles -->
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Markdown table of tickers</h1>
+		</header>
+		<div class="cf strip" >
+			<div class="col1-10-col">
+			</div>
+			<div class ="col1-35-col">
+				<h2>Tickers</h2>
+				<ul id="TickersTable">
+					<li class="tickerInUse" ticker="VOO" currency="USD" geography="US">VOO</li>
+					<li class="tickerInUse" ticker="VWO" currency="USD" geography="Emerging Markets">VWO</li>
+					<li class="tickerInUse" ticker="VGK" currency="USD" geography="Europe">VGK</li>
+				</ul>
+				<p>
+					Get a new ticker:
+					<select name="ticker" id="currencySelectTicker">
+						<option>USD</option>
+						<option>EUR</option>
+						<option>CHF</option>
+					</select>
+					<input class="input-box" autocomplete="off" type="text-input" id="inputBoxTicker" placeholder="Ticker name"> 
+					<input class="input-box" autocomplete="off" type="text-input" id="inputBoxGeography" placeholder="Geography">
+					<button id="buttonAddTicker" class="btnWide wide">Add Ticker</button>
+				</p>
+				<h2>Currencies</h2>
+				<ul id="CurrencyTable">
+					<li class="currencyInUse" currency="USD" id="mainCurrency">USD</li>
+					<li class="currencyInUse" currency="EUR" >EUR</li>
+					<li class="currencyInUse" currency="CHF" >CHF</li>
+				</ul>
+				<p>
+					Get a new currency: 
+					Main <input autocomplete="off" type="checkbox" id="inputCheckMainCurrency">
+					<input autocomplete="off" type="text-input" id="inputBoxCurrency" placeholder="USD">
+					<button id="buttonAddCurrency" class="btnWide wide">Add Currency</button>
+				</p>
+				<h2>Exchanges</h2>
+				<ul id="ExchangesTable">
+					<li class="exchangeInUse" exchange="DEGIRO">DEGIRO</li>
+					<li class="exchangeInUse" exchange="BANCO_BIG">BANCO_BIG</li>
+				</ul>
+				<p>
+					Get a new exchange: 
+					<input class="input-box" autocomplete="off" type="text-input" id="inputBoxExchange" placeholder="DEGIRO">
+					<button id="buttonAddExchange" class="btnWide wide">Add Exchange</button>
+				</p>
+			</div>
+			<div class ="col1-10-col">
+			</div>
+			<div class ="col1-35-col">
+				<p>
+					Get a new portfolio item: 
+					<select name="ticker" id="tickerSelectPortfolio">
+						<option>VOO</option>
+						<option>VWO</option>
+						<option>VGK</option>
+					</select>
+					<select name="exchange" id="exchangeSelectPortfolio">
+						<option>DEGIRO</option>
+						<option>BANCO_BIG</option>
+					</select>
+					<input type="number" name="ticker" id="numberSelectPortfolio" value="3">
+					</input>
+					<button id="buttonAddToPortfolio" class="btnWide wide">Add assets to portfolio</button>
+				</p>
+				<ul id="portfolio">
+					<li class="portfolioInUse" ticker="VOO" exchange="DEGIRO" amount="3">3 shares in VOO saved in DEGIRO</li>
+					<li class="portfolioInUse" ticker="VWO" exchange="DEGIRO" amount="12">12 shares in VWO saved in DEGIRO</li>
+					<li class="portfolioInUse" ticker="VGK" exchange="DEGIRO" amount="16">16 shares in VGK saved in DEGIRO</li>
+					<li class="portfolioInUse" ticker="VOO" exchange="BANCO_BIG" amount="2">2 shares in VOO saved in BANCO_BIG</li>
+					<li class="portfolioInUse" ticker="VWO" exchange="BANCO_BIG" amount="1">1 shares in VWO saved in BANCO_BIG</li>
+					<li class="portfolioInUse" ticker="VGK" exchange="BANCO_BIG" amount="6">6 shares in VGK saved in BANCO_BIG</li>
+				</ul>
+				<div>
+					<button id="buttonClear" class="btnWide wide">Clear all</button>
+					<button id="buttonTableMaker" class="btnWide wide">Create Table</button>
+					<pre id="stockTable"></pre>
+				</div>
+			</div>
+			<div class ="col1-10-col">
+			</div>
+		</div>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+	</body>
+	<footer>
+		<p><a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a></p>
+	</footer>
+</html>

@@ -1,0 +1,264 @@
+/*
+Index
+ -- Box Model Hack
+ -- Clear fix hack
+ - Base styles
+ - Layout
+ -- text
+ - Additional styles
+ -- lists
+ -- nav list
+ -- columns
+ */
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+clear: both;
+}
+
+
+.cf:before,
+.cf:after {
+content: "";
+display: table;
+}
+.cf:after {
+clear: both;
+}
+.cf {
+clear: both;
+*zoom: 1;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, rgb(150, 160, 50), rgb(70, 100, 120));
+  padding-bottom: 200px;
+}
+
+.strip {
+  width: 100%;
+  background-color: seashell;
+  min-height: 600px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+h1 {
+  width: fit-content;
+  font-family: "Bangers", cursive;
+  margin: 100px auto;
+  font-size: 6.5rem;
+}
+
+h2, h3 {
+  text-align: center;
+  font-size: 4.4rem;
+  margin-bottom: 25px;
+}
+
+h5 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.emph {
+  color: rgb(120, 60, 200);
+}
+
+textarea {
+  width: 100%;
+  height: 9rem;
+}
+
+header {
+
+}
+
+.input-box {
+  float: right;
+  width: 80%;
+}
+
+.error-text-input {
+  border: 2px solid red;
+}
+
+.center-col {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid rgb(40, 30, 20);
+  line-height: 3rem;
+  font-size: 2rem;
+  height: 9000px;
+}
+
+
+.col1-35-col {
+  float: left;
+  width: 35%;
+  padding: 20px;
+  border-right: 2px solid rgb(40, 30, 20);
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+.col1-10-col {
+  float: left;
+  width: 10%;
+  padding: 20px;
+  border-right: 2px solid rgb(40, 30, 20);
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+.clickable:hover {
+  background-color: silver;
+  cursor: pointer;
+}
+
+.clickable:hover ::selection, .clickable:hover ::-moz-selection {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.password-see {
+  margin: 3px;
+  margin-top: -3px;
+  display: inline-block;
+  width: fit-content;
+  border: solid 2px black;
+  cursor: pointer;
+  background-color: antiquewhite;
+  height: 3rem;
+}
+
+.password-see:hover {
+  background-color: bisque;
+}
+
+
+/*
+Third quadrand
+*/
+
+.out {
+  float: right;
+  background-color: blanchedalmond;
+}
+
+.password {
+  display: block;
+  width: 100%;
+  background-color: rgb(150, 160, 50);
+}
+
+
+/*
+first visit
+*/
+
+.firstVisit {
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(180, 160, 50, 0.965);
+}
+
+.inp {
+  background-color: rgb(180, 160, 50, 0.5);
+  width: 70%;
+  margin: 300px auto;
+  min-height: 30rem;
+  border: 2px solid black;
+  padding: 30px;
+}
+
+.inputData {
+  margin-bottom: 5px;
+}
+
+
+.main {
+  font-size: 3.4rem;
+  height: 6rem;
+  padding: 0 20px;
+}
+
+.btnWide, .inputData  {
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(240, 230, 230);
+  cursor: pointer;
+}
+
+.inputData:hover,.btnWide:hover {
+  background-color: rgb(150, 170, 150);
+}
+
+.btnWide:active {
+  border: 5px ridge rgb(120, 140, 140);
+}
+
+.wide{
+  width: 100%;
+}
+
+
+.tickerInUse, .exchangeInUse, .currencyInUse, .portfolioInUse {
+  border-radius: 6px;
+  background-color: rgb(240, 230, 230);
+  margin: 3px;
+  padding-left: 25px;
+  border: 1px solid black;
+}
+
+/*
+Error box
+*/
+
+.error {
+  border: 3px solid red;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+
+@media (max-width:1500px) {
+  .col-1-4{
+    width: 50%;
+    height: 50%;
+    border-bottom: 2px solid rgb(40, 30, 20);
+  }
+  .strip {
+    min-height: 1200px;
+  }
+}
