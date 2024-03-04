@@ -21,9 +21,10 @@ const buttonAddToPortfolioHTML = document.querySelector("#buttonAddToPortfolio")
 const divportfolioHTML = document.querySelector("#portfolio");
 const buttonClearHTML = document.querySelector("#buttonClear");
 const currencySelectTickerHTML = document.querySelector("#currencySelectTicker");
+const spanAPIKEYHTML = document.querySelector("#spanAPIkey");
 
 const apiStocks = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="; //IBM&apikey=demo";
-const apiKeyStocks = "&apikey=RZZMK9BMMJUJI6EB"
+const apiKeyStocks = "&apikey=";//RZZMK9BMMJUJI6EB"
 const apiCurrencyExchange = "https://open.er-api.com/v6/latest/CHF";
 const sQuery = new URLSearchParams(window.location.search);
 
@@ -49,7 +50,7 @@ async function fetchExchangeRates() {
 
 async function fetchStockData(symbol) {
     try {
-        const response = await fetch(apiStocks + symbol + apiKeyStocks);
+        const response = await fetch(apiStocks + symbol + apiKeyStocks + spanAPIKEYHTML.value);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -315,8 +316,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             addToPortfolio(ticker, tickers[ticker][0]);
         });
     }
-    //Construct tables
-    await constructTable();
 });
 
 
